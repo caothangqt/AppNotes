@@ -32,31 +32,37 @@ struct EditNotesView: View {
                     .scrollDisabled(true)
                     .font(.title3)
                 .focused($contentEditorInFocus)
+                .onChange(of: content, {
+                    self.updateNote(title: title, content: content)
+                })
                 
     
             }
-            .padding(10)
         }
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .keyboard) {
-                HStack {
+//                HStack {
                     Spacer()
-                    Button("Done") {
-                        self.hideKeyboard()
-                        // Save to Core Data
-                        self.updateNote(title: title, content: content)
-                    }
+//                    Button("Done") {
+//                        self.hideKeyboard()
+//                        // Save to Core Data
+//                        self.updateNote(title: title, content: content)
+//                    }
+                    
                 }
             }
-        }
+//        }
         .onAppear {
-            
             if let note = note {
                 self.title = note.title ?? ""
                 self.content = note.content ?? ""
             }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                contentEditorInFocus = true // Đảm bảo focus để hiển thị thanh toolbar
+            }
         }
+
                     
     }
     

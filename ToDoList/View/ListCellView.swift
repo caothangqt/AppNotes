@@ -8,10 +8,10 @@ struct ListCellView: View {
             Text(note.title ?? "New Note")
                 .lineLimit(1)
                 .font(.title3)
-//                .fontWeight(.bold)
+                .fontWeight(.bold)
             Text(note.content ?? "No context available")
                 .lineLimit(1)
-//                .fontWeight(.light)
+                .fontWeight(.light)
         }
     }
 }
