@@ -1,6 +1,6 @@
 //
 //  NotesViewModel.swift
-//  ToDoList
+//  AppNotes
 //
 //  Created by Tran Cao Thang on 15/02/2025.
 //
