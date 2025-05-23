@@ -4,7 +4,8 @@ A simple note-taking iOS app built with SwiftUI and Core Data.
 
 ## Features
 
-- Create, edit and search notes
+- Full CRUD functionality (Create, Read, Update, Delete)
+- Search notes by title
 - Date-based organization
 - Clean, minimalist UI
 - Persistent storage
